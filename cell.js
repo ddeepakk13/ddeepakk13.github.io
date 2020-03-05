@@ -1,5 +1,5 @@
 class Cell {
-  constructor(pos = createVector(random(0.25*width,0.75*width),random(0.25*height,0.75*height)), r=50,velocity=createVector(0,0)) {
+  constructor(pos = createVector(random(0.25*width,0.75*width),random(0.25*height,0.75*height)), r=random(25,50),velocity=createVector(0,0)) {
     this.r = r;
     this.pos = pos;
     this.clr = color(random(100,255),0,random(100,255),150);

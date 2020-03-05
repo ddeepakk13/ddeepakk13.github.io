@@ -4,7 +4,7 @@ function setup() {
   createCanvas(displayWidth, displayHeight);
   noStroke();
   cells = [];
-  for (let i=0; i<10; i++) {
+  for (let i=0; i<5; i++) {
     cells.push(new Cell());
   }
 }
