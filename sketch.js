@@ -1,7 +1,7 @@
 let cells;
 
 function setup() {
-  createCanvas(displayWidth, displayHeight);
+  createCanvas(windowWidth, windowHeight);
   noStroke();
   cells = [];
   for (let i=0; i<5; i++) {
