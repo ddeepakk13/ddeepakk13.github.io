@@ -1,13 +1,23 @@
 <!DOCTYPE html><html lang="en"><head>
-    <script src="p5.js"></script>
-    <script src="p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
 
   </head>
   <body>
-    <script src="cell.js"></script>
-    <script src="sketch.js"></script>
-  
+    <label for="site-url-input">Site URL:</label>
+    <input type="text" id="site-url-input" name="site-url-input">
+    <button onclick="getRandomPage('site-url-input')" id="submit-button">Submit</button>
+    <script>
+      function getRandomPage(inputID) {
+        let url = document.getElementById(inputID).value;
+        let maxPage = url.match(/.*page.(\d*)/)[1];
+        let newUrl = url.replace(maxPage, getRandomInt(1,maxPage));
+        var win = window.open(newUrl, '_blank');
+        win.focus();
+      }
 
-</body></html>
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+    </script>
+  </body>
+</html>
