@@ -10,7 +10,9 @@
       function getRandomPage(inputID) {
         let url = document.getElementById(inputID).value;
         let maxPage = url.match(/.*page.(\d*)/)[1];
-        let newUrl = url.replace(maxPage, getRandomInt(1,maxPage));
+        let pageStr = url.match(/page.\d*/)[0];
+        pageStr = pageStr.replace(/\d+/, getRandomInt(1,maxPage));
+        let newUrl = url.replace(/page.\d*/, pageStr);
         var win = window.open(newUrl, '_blank');
         win.focus();
       }
